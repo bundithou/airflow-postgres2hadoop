@@ -20,10 +20,11 @@ df = order.join(restaurant, on = order.restaurant_id == restaurant.id, how='left
 # Get the average discount for each category
 avg_discount_cat = df.groupby('category').avg('discount', 'discount_no_null')
 avg_discount_cat.show()
-avg_discount_cat.coalesce(1).write.csv('/opt/local/sql_result/avg_discount_cat', header=True, mode='overwrite')
 
 # Row count per each cooking_bin
 cnt_cooking_bin = df.groupby('cooking_bin').count()
 cnt_cooking_bin.show()
-cnt_cooking_bin.coalesce(1).write.csv('/opt/local/sql_result/cnt_cooking_bin', header=True, mode='overwrite')
+
+avg_discount_cat.coalesce(1).write.csv('/opt/bitnami/spark/sql_result/discount', header=True, mode='overwrite')
+cnt_cooking_bin.coalesce(1).write.csv('/opt/bitnami/spark/sql_result/cooking', header=True, mode='overwrite')
 
