@@ -1,4 +1,4 @@
-# lmwn-de-assignment
+# Airflow ELT PostgresDB to Hadoop
 
 ## Get start
 
@@ -21,4 +21,4 @@ Lastly, suppose that we have ETL for daily batch ingestion, we can test triggeri
 ![batch job dag](docs/images/etl_dag_full.png "batch job dag")
 
 the aggregated result is in folder `/sql_requirement`
-(avg_discount_by_category, count_cooking_bin)
+(discount.csv, cooking.csv)
